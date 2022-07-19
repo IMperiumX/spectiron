@@ -10,7 +10,7 @@ class OpenApiParam():
         self.default = default
         self.required = required
 
-    def as_dict(self) -> dict:
+    def asdict(self):
 
         openapi_dict = {
             'required': self.required,

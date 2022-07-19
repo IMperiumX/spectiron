@@ -13,7 +13,7 @@ class OpenApiResponse():
         self.status_code = status_code
         self.http_content_type = http_content_type
 
-    def as_dict(self) -> dict:
+    def asdict(self):
         openapi_dict = {
             self.status_code: {
                 'description': self.descr
