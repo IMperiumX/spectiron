@@ -16,7 +16,7 @@ def test_param_query():
         'in': 'query'
     }
     openapi_param = OpenApiParam('test_param', 'query', str)
-    assert expected_param_dict == openapi_param.as_dict()
+    assert expected_param_dict == openapi_param.asdict()
 
 
 def test_param_path():
@@ -30,7 +30,7 @@ def test_param_path():
         'in': 'path'
     }
     openapi_param = OpenApiParam('test_param', 'path', str)
-    assert expected_param_dict == openapi_param.as_dict()
+    assert expected_param_dict == openapi_param.asdict()
 
 
 def test_param_optinal():
@@ -44,7 +44,7 @@ def test_param_optinal():
         'in': 'path'
     }
     openapi_param = OpenApiParam('test_param', 'path', str, required=False)
-    assert expected_param_dict == openapi_param.as_dict()
+    assert expected_param_dict == openapi_param.asdict()
 
 
 def test_param_default():
@@ -59,7 +59,7 @@ def test_param_default():
         'in': 'path'
     }
     openapi_param = OpenApiParam('test_param', 'path', str, 'default_value')
-    assert expected_param_dict == openapi_param.as_dict()
+    assert expected_param_dict == openapi_param.asdict()
 
 
 def test_param_any_type():
@@ -72,7 +72,7 @@ def test_param_any_type():
         'in': 'path'
     }
     openapi_param = OpenApiParam('test_param', 'path')
-    assert expected_param_dict == openapi_param.as_dict()
+    assert expected_param_dict == openapi_param.asdict()
 
 
 def test_param_typed_list():
@@ -87,7 +87,7 @@ def test_param_typed_list():
         'in': 'path'
     }
     openapi_param = OpenApiParam('test_param', 'path', List[str])
-    assert expected_param_dict == openapi_param.as_dict()
+    assert expected_param_dict == openapi_param.asdict()
 
 
 def test_param_generic_list():
@@ -102,7 +102,7 @@ def test_param_generic_list():
         'in': 'path'
     }
     openapi_param = OpenApiParam('test_param', 'path', List)
-    assert expected_param_dict == openapi_param.as_dict()
+    assert expected_param_dict == openapi_param.asdict()
 
 
 @pytest.mark.skip('WIP')

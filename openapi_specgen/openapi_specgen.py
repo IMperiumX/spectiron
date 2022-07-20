@@ -34,7 +34,7 @@ class OpenApi():
             if openapi_dict['paths'].get(openapi_path.path) is None:
                 openapi_dict['paths'][openapi_path.path] = {}
             openapi_dict['paths'][openapi_path.path].update(
-                openapi_path.as_dict()[openapi_path.path])
+                openapi_path.asdict()[openapi_path.path])
 
             for param in openapi_path.params:
                 if get_openapi_type(param.data_type) == 'object':

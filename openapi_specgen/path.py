@@ -29,10 +29,10 @@ class OpenApiPath():
                     'summary': self.summary,
                     'operationId': f'[{self.method}]_{self.path}',
                     'responses': {
-                        k: v for response in self.responses for k, v in response.as_dict().items()
+                        k: v for response in self.responses for k, v in response.asdict().items()
                     },
                     'parameters': [
-                        param.as_dict() for param in self.params
+                        param.asdict() for param in self.params
                     ]
                 }
             }

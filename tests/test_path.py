@@ -34,7 +34,7 @@ def test_path_with_params():
                                'Test Description',
                                'Test Summary'
                                )
-    assert expected_openapi_dict == openapi_path.as_dict()
+    assert expected_openapi_dict == openapi_path.asdict()
 
 
 def test_path_no_params():
@@ -60,4 +60,4 @@ def test_path_no_params():
                                descr='Test Description',
                                summary='Test Summary'
                                )
-    assert expected_openapi_dict == openapi_path.as_dict()
+    assert expected_openapi_dict == openapi_path.asdict()

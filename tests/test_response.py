@@ -24,7 +24,7 @@ def test_response_primitive():
         }
     }
     openapi_response = OpenApiResponse('Test Response', data_type=str)
-    assert expected_openapi_dict == openapi_response.as_dict()
+    assert expected_openapi_dict == openapi_response.asdict()
 
 
 def test_response_object():
@@ -42,7 +42,7 @@ def test_response_object():
         }
     }
     openapi_response = OpenApiResponse('Test Response', data_type=SomeObject)
-    assert expected_openapi_dict == openapi_response.as_dict()
+    assert expected_openapi_dict == openapi_response.asdict()
 
 
 def test_response_empty():
@@ -52,7 +52,7 @@ def test_response_empty():
         }
     }
     openapi_response = OpenApiResponse('Test Empty Response', '201')
-    assert expected_openapi_dict == openapi_response.as_dict()
+    assert expected_openapi_dict == openapi_response.asdict()
 
 
 @pytest.mark.skip('WIP')
