@@ -1,7 +1,12 @@
 from .utils import get_openapi_schema
 
 
+@dataclass
 class OpenApiResponse():
+    descr: str
+    status_code: str = '200'
+    data_type: type = None
+    http_content_type: str = 'application/json'
 
     def __init__(self,
                  descr: str,

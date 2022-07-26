@@ -1,25 +1,18 @@
+from dataclasses import dataclass
 from typing import List
 
 from .param import OpenApiParam
 from .response import OpenApiResponse
 
 
+@dataclass
 class OpenApiPath():
-
-    def __init__(self,
-                 path: str,
-                 method: str,
-                 responses: List[OpenApiResponse],
-                 params: List[OpenApiParam] = [],
-                 descr: str = '',
-                 summary: str = '',
-                 ):
-        self.path = path
-        self.method = method
-        self.responses = responses
-        self.params = params
-        self.summary = summary
-        self.descr = descr
+    path: str
+    method: str
+    responses: List[OpenApiResponse]
+    params: List[OpenApiParam] = []
+    descr: str = '',
+    summary: str = ''
 
     def asdict(self):
         return {

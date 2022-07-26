@@ -1,7 +1,13 @@
 from .utils import get_openapi_schema
 
 
+@dataclass
 class OpenApiParam():
+    name: str
+    location: str
+    data_type: type = None
+    default = None
+    required: bool = True
 
     def __init__(self,
                  name: str,
