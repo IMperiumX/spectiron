@@ -1,4 +1,3 @@
-"""Main module."""
 from typing import List
 
 from .path import OpenApiPath
@@ -17,7 +16,7 @@ class OpenApi():
         self.title = title
         self.paths = paths
 
-    def asdict(self):
+    def as_dict(self):
         openapi_dict = {
             'openapi': self.version,
             'info': {
@@ -34,16 +33,16 @@ class OpenApi():
             if openapi_dict['paths'].get(openapi_path.path) is None:
                 openapi_dict['paths'][openapi_path.path] = {}
             openapi_dict['paths'][openapi_path.path].update(
-                openapi_path.asdict()[openapi_path.path])
+                openapi_path.as_dict()[openapi_path.path])
 
             for param in openapi_path.params:
                 if get_openapi_type(param.data_type) == 'object':
                     openapi_dict['components']['schemas'] = get_openapi_schema(
-                        param.data_type)
+                        param.data_type, reference=False)
 
             for resp in openapi_path.responses:
                 if get_openapi_type(resp.data_type) == 'object':
                     openapi_dict['components']['schemas'] = get_openapi_schema(
-                        resp.data_type)
+                        resp.data_type, reference=False)
 
         return openapi_dict
