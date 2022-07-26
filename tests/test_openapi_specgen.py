@@ -6,7 +6,6 @@ import pytest
 
 from click.testing import CliRunner
 
-from openapi_specgen import openapi_specgen
 from openapi_specgen import cli
 
 
