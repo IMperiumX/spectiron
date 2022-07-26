@@ -1,4 +1,5 @@
-from .utils import get_openapi_schema
+from dataclasses import dataclass
+from utils import get_openapi_schema
 
 
 @dataclass
@@ -9,19 +10,7 @@ class OpenApiParam():
     default = None
     required: bool = True
 
-    def __init__(self,
-                 name: str,
-                 location: str,
-                 data_type: type = None,
-                 default=None,
-                 required: bool = True):
-        self.name = name
-        self.location = location
-        self.data_type = data_type
-        self.default = default
-        self.required = required
-
-    def as_dict(self):
+    def asdict(self):
         openapi_dict = {
             'required': self.required,
             'name': self.name,
@@ -30,9 +19,9 @@ class OpenApiParam():
 
         schema = {}
 
-        if self.data_type is not None:
+        if self.data_type:
             schema = get_openapi_schema(self.data_type)
-        if self.default is not None:
+        if self.default:
             schema['default'] = self.default
 
         schema['title'] = self.name.title()
