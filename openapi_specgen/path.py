@@ -20,10 +20,10 @@ class OpenApiPath():
     def asdict(self):
         return {
             self.path: {
-                self.method: {
+                self.method.upper(): {
                     'description': self.descr,
                     'summary': self.summary,
-                    'operationId': f'[{self.method}]_{self.path}',
+                    'operationId': f'[{self.method.upper()}]_{self.path}',
                     'responses': {
                         k: v for response in self.responses for k, v in response.asdict().items()
                     },
@@ -33,3 +33,6 @@ class OpenApiPath():
                 }
             }
         }
+
+    def __repr__(self) -> str:
+        return f"Here we are => {self.asdict()!r}"

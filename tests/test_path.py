@@ -4,10 +4,10 @@ from openapi_specgen import OpenApiParam, OpenApiPath, OpenApiResponse
 def test_path_with_params():
     expected_openapi_dict = {
         '/test_path': {
-            'get': {
+            'GET': {
                 'description': 'Test Description',
                 'summary': 'Test Summary',
-                'operationId': '[get]_/test_path',
+                'operationId': '[GET]_/test_path',
                 'responses': {
                     '200': {
                         'description': 'Test Response'
@@ -28,7 +28,7 @@ def test_path_with_params():
         }
     }
     openapi_path = OpenApiPath('/test_path',
-                               'get',
+                               'GET',
                                [OpenApiResponse('Test Response')],
                                [OpenApiParam('test_param', 'query', str)],
                                'Test Description',
@@ -40,10 +40,10 @@ def test_path_with_params():
 def test_path_no_params():
     expected_openapi_dict = {
         '/test_path': {
-            'get': {
+            'GET': {
                 'description': 'Test Description',
                 'summary': 'Test Summary',
-                'operationId': '[get]_/test_path',
+                'operationId': '[GET]_/test_path',
                 'responses': {
                     '200': {
                         'description': 'Test Response'
@@ -55,7 +55,7 @@ def test_path_no_params():
         }
     }
     openapi_path = OpenApiPath('/test_path',
-                               'get',
+                               'GET',
                                [OpenApiResponse('Test Response')],
                                descr='Test Description',
                                summary='Test Summary'
