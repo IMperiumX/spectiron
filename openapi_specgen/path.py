@@ -10,8 +10,10 @@ class OpenApiPath():
     path: str
     method: str
     responses: List[OpenApiResponse]
-    params: List[OpenApiParam] = []
-    descr: str = '',
+    # make params optional & fix dataclasses ValueError with mutable default
+    # Stackoverflow:https://stackoverflow.com/questions/53632152/why-cant-dataclasses-have-mutable-defaults-in-their-class-attributes-declaratio
+    params: List[OpenApiParam] = field(default_factory=list)
+    descr: str = ''
     summary: str = ''
 
     def asdict(self):
