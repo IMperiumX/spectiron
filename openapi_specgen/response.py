@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from utils import get_openapi_schema
+from .utils import get_openapi_schema
 
 
 @dataclass

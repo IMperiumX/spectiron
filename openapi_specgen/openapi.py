@@ -1,7 +1,7 @@
 from typing import List
 
-from path import OpenApiPath
-from utils import get_openapi_schema, get_openapi_type
+from .path import OpenApiPath
+from .utils import get_openapi_schema, get_openapi_type
 
 
 class OpenApi():
@@ -10,9 +10,7 @@ class OpenApi():
     title = None
     paths = None
 
-    def __init__(self,
-                 title: str,
-                 paths: List[OpenApiPath]):
+    def __init__(self, title: str, paths: List[OpenApiPath]):
         self.title = title
         self.paths = paths
 

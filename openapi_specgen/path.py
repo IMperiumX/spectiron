@@ -1,8 +1,9 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import List
 
-from param import OpenApiParam
-from response import OpenApiResponse
+
+from .param import OpenApiParam
+from .response import OpenApiResponse
 
 
 @dataclass

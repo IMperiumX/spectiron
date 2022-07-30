@@ -1,6 +1,6 @@
 from dataclasses import fields
 
-from consants import *
+from .consants import *
 
 
 def get_openapi_type(data_type: type) -> str:
