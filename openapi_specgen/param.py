@@ -7,7 +7,7 @@ class OpenApiParam():
     name: str
     location: str
     data_type: type = None
-    default = None
+    default: bool = None
     required: bool = True
 
     def asdict(self):
