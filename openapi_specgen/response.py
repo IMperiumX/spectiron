@@ -1,27 +1,25 @@
 from dataclasses import dataclass
-from .utils import get_openapi_schema
+
+from openapi_specgen.utils import get_openapi_schema
 
 
 @dataclass
-class OpenApiResponse():
+class OpenApiResponse:
     descr: str
-    status_code: str = '200'
+    status_code: int = 200
     data_type: type = None
-    http_content_type: str = 'application/json'
+    reference: bool = False
+    http_content_type: str = "application/json"
 
     def asdict(self):
-        openapi_dict = {
-            self.status_code: {
-                'description': self.descr
-            }
-        }
+        openapi_dict = {str(self.status_code): {"description": self.descr}}
 
         if self.data_type is None:
             return openapi_dict
 
-        openapi_dict[self.status_code]['content'] = {
+        openapi_dict[str(self.status_code)]["content"] = {
             self.http_content_type: {
-                'schema': get_openapi_schema(self.data_type)
+                "schema": get_openapi_schema(self.data_type, reference=self.reference)
             }
         }
 
