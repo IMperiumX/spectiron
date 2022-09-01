@@ -10,8 +10,8 @@ title: openapi-specgen
 
 Python library for generating OpenApi 3 specs from Python code
 
--   Free software: MIT license
--   Documentation: <https://openapi-specgen.readthedocs.io>.
+- Free software: MIT license
+- Documentation: <https://openapi-specgen.readthedocs.io>.
 
 # Features
 
