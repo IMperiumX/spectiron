@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 from typing import List
 
 from openapi_specgen.path import OpenApiPath
-from openapi_specgen.utils import OPENAPI_DEFAULT_TYPE, get_openapi_schema, get_type
+from openapi_specgen.schema import OPENAPI_DEFAULT_TYPE, get_openapi_schema, get_type
 
 
 @dataclass

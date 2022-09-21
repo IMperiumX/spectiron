@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Any
 
-from openapi_specgen.utils import get_openapi_schema
+from openapi_specgen.schema import get_openapi_schema
 
 
 @dataclass
