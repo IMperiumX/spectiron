@@ -10,7 +10,7 @@ from openapi_specgen.schema import get_openapi_schema
 class OpenApiPath:
     path: str
     method: str
-    responses: List[OpenApiResponse]
+    responses: List[OpenApiResponse] = field(default_factory=list)
 
     # make params optional & fix dataclasses ValueError with mutable default
     # Stackoverflow:https://stackoverflow.com/questions/53632152/why-cant-dataclasses-have-mutable-defaults-in-their-class-attributes-declaratio
