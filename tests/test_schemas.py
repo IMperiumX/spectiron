@@ -47,7 +47,7 @@ def test_dataclass_schema():
         }
     }
     assert expected_openapi_schema == get_openapi_schema(
-        DataclassObject, reference=False
+        DataclassObject, reference=True
     )
 
 
@@ -82,5 +82,5 @@ def test_nested_objects():
         },
     }
     assert expected_openapi_schema == get_openapi_schema(
-        DataclassNestedObject, reference=False
+        DataclassNestedObject, reference=True
     )
