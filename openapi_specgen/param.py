@@ -6,8 +6,8 @@ from openapi_specgen.schema import get_openapi_schema
 
 @dataclass
 class OpenApiParam:
-    name: str = ""
-    location: str = ""
+    name: str = "param_name"
+    location: str = "query"
     data_type: type = None
     default: Any = None
     required: bool = True
@@ -15,18 +15,14 @@ class OpenApiParam:
 
     def asdict(self):
         openapi_dict = {
-            "required": self.required,
             "name": self.name,
             "in": self.location,
+            "required": self.required,
+            "schema": {
+                self.data_type
+                if get_openapi_schema(self.data_type, self.reference)
+                else self.default
+            },
+            "title": self.name.title(),
         }
-
-        schema = {}
-
-        if self.data_type:
-            schema = get_openapi_schema(self.data_type, self.reference)
-        if self.default:
-            schema["default"] = self.default
-
-        schema["title"] = self.name.title()
-        openapi_dict["schema"] = schema
         return openapi_dict
