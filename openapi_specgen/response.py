@@ -8,7 +8,7 @@ class OpenApiResponse:
     description: str = "OK"
     status_code: int = 200
     data_type: type = None
-    reference: bool = True
+    reference: bool = False
     http_content_type: str = "application/json"
 
     def as_dict(self):
