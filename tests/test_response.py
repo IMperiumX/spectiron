@@ -11,8 +11,9 @@ def test_response_primitive():
             "content": {"application/json": {"schema": {"type": "string"}}},
         }
     }
+
     openapi_response = OpenApiResponse("Test Response", data_type=str)
-    assert expected_openapi_dict == openapi_response.asdict()
+    assert expected_openapi_dict == openapi_response.as_dict()
 
 
 def test_response_object_with_reference():
@@ -27,40 +28,22 @@ def test_response_object_with_reference():
         }
     }
     openapi_response = OpenApiResponse(
-        "Test Response", data_type=DataclassObject, reference=True
+        "Test Response",
+        data_type=DataclassObject,
+        reference=True,
     )
-    assert expected_openapi_dict == openapi_response.asdict()
+    assert expected_openapi_dict == openapi_response.as_dict()
 
 
 def test_response_object_without_reference():
     expected_openapi_dict = {
         "200": {
+            "description": "Test Response",
             "content": {
                 "application/json": {
                     "schema": {
                         "DataclassObject": {
-                            "properties": {
-                                "boolean_field": {
-                                    "title": "Boolean_Field",
-                                    "type": "boolean",
-                                },
-                                "float_field": {
-                                    "title": "Float_Field",
-                                    "type": "number",
-                                },
-                                "int_field": {
-                                    "title": "Int_Field",
-                                    "type": "integer",
-                                },
-                                "list_field": {
-                                    "title": "List_Field",
-                                    "type": "array",
-                                },
-                                "str_field": {
-                                    "title": "Str_Field",
-                                    "type": "string",
-                                },
-                            },
+                            "title": "DataclassObject",
                             "required": [
                                 "str_field",
                                 "int_field",
@@ -68,23 +51,32 @@ def test_response_object_without_reference():
                                 "boolean_field",
                                 "list_field",
                             ],
-                            "title": "DataclassObject",
                             "type": "object",
+                            "properties": {
+                                "str_field": {"type": "string"},
+                                "int_field": {"type": "integer"},
+                                "float_field": {"type": "number"},
+                                "boolean_field": {"type": "boolean"},
+                                "list_field": {"type": "array", "items": {}},
+                            },
                         }
                     }
                 }
             },
-            "description": "Test Response",
         }
     }
-    openapi_response = OpenApiResponse("Test Response", data_type=DataclassObject)
-    assert expected_openapi_dict == openapi_response.asdict()
+
+    openapi_response = OpenApiResponse(
+        description="Test Response",
+        data_type=DataclassObject,
+    )
+    assert expected_openapi_dict == openapi_response.as_dict()
 
 
 def test_response_empty():
     expected_openapi_dict = {"201": {"description": "Test Empty Response"}}
     openapi_response = OpenApiResponse("Test Empty Response", "201")
-    assert expected_openapi_dict == openapi_response.asdict()
+    assert expected_openapi_dict == openapi_response.as_dict()
 
 
 @pytest.mark.skip("WIP")

@@ -9,89 +9,111 @@ from openapi_specgen import OpenApiParam
 def test_param_location(location):
     expected_param_dict = {
         "required": True,
-        "schema": {"title": "Test_Param", "type": "string"},
         "name": "test_param",
         "in": location,
+        "schema": {"title": "Test_Param", "type": "string"},
     }
-    openapi_param = OpenApiParam("test_param", location, str)
-    assert expected_param_dict == openapi_param.asdict()
+
+    openapi_param = OpenApiParam(
+        name="test_param",
+        location=location,
+        data_type=str,
+    )
+    assert expected_param_dict == openapi_param.as_dict()
 
 
 def test_param_optinal():
     expected_param_dict = {
         "required": False,
-        "schema": {"title": "Test_Param", "type": "string"},
         "name": "test_param",
         "in": "path",
+        "schema": {"title": "Test_Param", "type": "string"},
     }
-    openapi_param = OpenApiParam("test_param", "path", str, required=False)
-    assert expected_param_dict == openapi_param.asdict()
+    openapi_param = OpenApiParam(
+        name="test_param",
+        location="path",
+        data_type=str,
+        required=False,
+    )
+    assert expected_param_dict == openapi_param.as_dict()
 
 
 def test_param_default():
     expected_param_dict = {
         "required": True,
-        "schema": {"title": "Test_Param", "type": "string", "default": "default_value"},
         "name": "test_param",
         "in": "path",
+        "schema": {"title": "Test_Param", "type": "string", "default": "default_value"},
     }
-    openapi_param = OpenApiParam("test_param", "path", str, "default_value")
-    assert expected_param_dict == openapi_param.asdict()
+    openapi_param = OpenApiParam(
+        name="test_param",
+        location="path",
+        data_type=str,
+        default="default_value",
+    )
+    assert expected_param_dict == openapi_param.as_dict()
 
 
 def test_param_any_type():
     expected_param_dict = {
         "required": True,
-        "schema": {"title": "Test_Param"},
         "name": "test_param",
         "in": "path",
+        "schema": {"title": "Test_Param"},
     }
-    openapi_param = OpenApiParam("test_param", "path")
-    assert expected_param_dict == openapi_param.asdict()
+    openapi_param = OpenApiParam(
+        name="test_param",
+        location="path",
+    )
+    assert expected_param_dict == openapi_param.as_dict()
 
 
 @pytest.mark.parametrize(
-    "openapi_item_type, data_type",
+    "data_type, openapi_item_type",
     [
-        ({}, List),
-        ({"type": "string"}, List[str]),
-        ({"type": "integer"}, List[int]),
-        ({"type": "number"}, List[float]),
-        ({"type": "boolean"}, List[bool]),
-        ({"type": "boolean"}, List[bool]),
+        (list, {}),
+        (list[str], {"type": "string"}),
+        (list[int], {"type": "integer"}),
+        (list[float], {"type": "number"}),
+        (list[bool], {"type": "boolean"}),
+        (list[bool], {"type": "boolean"}),
     ],
 )
-def test_param_typed_list(openapi_item_type, data_type):
+def test_param_typed_list(data_type, openapi_item_type):
     expected_param_dict = {
         "required": True,
-        "schema": {"title": "Test_Param", "type": "array", "items": openapi_item_type},
         "name": "test_param",
         "in": "path",
+        "schema": {"title": "Test_Param", "type": "array", "items": openapi_item_type},
     }
-    openapi_param = OpenApiParam("test_param", "path", data_type)
-    assert expected_param_dict == openapi_param.asdict()
+    openapi_param = OpenApiParam(
+        name="test_param",
+        location="path",
+        data_type=data_type,
+    )
+    assert expected_param_dict == openapi_param.as_dict()
 
 
-@pytest.mark.skip("WIP")
-def test_param_enum():
-    pass
+# @pytest.mark.skip("WIP")
+# def test_param_enum():
+#     pass
 
 
-@pytest.mark.skip("WIP")
-def test_param_examples():
-    pass
+# @pytest.mark.skip("WIP")
+# def test_param_examples():
+#     pass
 
 
-@pytest.mark.skip("WIP")
-def test_param_empty_value():
-    pass
+# @pytest.mark.skip("WIP")
+# def test_param_empty_value():
+#     pass
 
 
-@pytest.mark.skip("WIP")
-def test_param_nullable():
-    pass
+# @pytest.mark.skip("WIP")
+# def test_param_nullable():
+#     pass
 
 
-@pytest.mark.skip("WIP")
-def test_param_deprecated():
-    pass
+# @pytest.mark.skip("WIP")
+# def test_param_deprecated():
+#     pass
