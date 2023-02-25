@@ -1,5 +1,6 @@
 """Console script for openapi_specgen."""
 import sys
+
 import click
 
 

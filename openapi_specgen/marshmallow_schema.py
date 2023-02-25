@@ -6,7 +6,7 @@ import marshmallow
 
 def get_openapi_schema_from_marshmallow_field(
     marshmallow_field: marshmallow.fields.Field,
-) -> Dict:
+) -> dict:
     """
     Returns openapi schema of marshmallow_field type
 
@@ -44,7 +44,7 @@ def get_openapi_schema_from_marshmallow_field(
         }
 
 
-def get_openapi_schema_from_mashmallow_schema(data_type: type, reference=True) -> Dict:
+def get_openapi_schema_from_mashmallow_schema(data_type: type, reference=True) -> dict:
     """Returns a dict representing the openapi schema of data_type.
 
     When referencing assumes objects will be defined in #/components/schemas/.
