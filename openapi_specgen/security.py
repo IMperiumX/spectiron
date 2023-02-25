@@ -37,10 +37,22 @@ class OpenApiSecurity:
     api_key_auth: ApiKeyAuth | None = None
 
     def as_dict(self):
-        auth_options = {}
-        self._auth_handler(auth_options, self.basic_auth, "BasicAuth")
-        self._auth_handler(auth_options, self.bearer_auth, "BearerAuth")
-        self._auth_handler(auth_options, self.api_key_auth, "ApiKeyAuth")
+        auth_options = dict()
+        self._auth_handler(
+            auth_options,
+            self.basic_auth,
+            self.basic_auth.__class__.__name__,
+        )
+        self._auth_handler(
+            auth_options,
+            self.bearer_auth,
+            self.bearer_auth.__class__.__name__,
+        )
+        self._auth_handler(
+            auth_options,
+            self.api_key_auth,
+            self.api_key_auth.__class__.__name__,
+        )
 
         return auth_options
 
