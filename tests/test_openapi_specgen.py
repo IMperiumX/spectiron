@@ -6,7 +6,17 @@
 import pytest
 from click.testing import CliRunner
 
-from openapi_specgen import OpenApi, OpenApiParam, OpenApiPath, OpenApiResponse, cli
+from openapi_specgen import (
+    ApiKeyAuth,
+    BasicAuth,
+    BearerAuth,
+    OpenApi,
+    OpenApiParam,
+    OpenApiPath,
+    OpenApiResponse,
+    OpenApiSecurity,
+    cli,
+)
 from tests.utils import DataclassObject
 
 
@@ -159,8 +169,14 @@ def test_openapi():
                         "list_field": {"type": "array", "items": {}},
                     },
                 }
-            }
+            },
+            "securitySchemes": {
+                "BasicAuth": {"type": "http", "scheme": "basic"},
+                "BearerAuth": {"type": "http", "scheme": "bearer"},
+                "ApiKeyAuth": {"type": "apiKey", "in": "header", "name": "X-API-Key"},
+            },
         },
+        "security": [{"ApiKeyAuth": []}, {"BasicAuth": []}, {"BearerAuth": []}],
     }
     test_resp = OpenApiResponse(
         description="test_response",
@@ -178,5 +194,6 @@ def test_openapi():
         params=[test_param],
         request_body=DataclassObject,
     )
-    test_api = OpenApi(title="test_api", paths=[test_path])
+    test_security = OpenApiSecurity(BasicAuth(), BearerAuth(), ApiKeyAuth())
+    test_api = OpenApi(title="test_api", paths=[test_path], security=test_security)
     assert expected_openapi_dict == test_api.as_dict()
