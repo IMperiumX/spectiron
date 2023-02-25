@@ -11,18 +11,18 @@ class OpenApiParam:
     data_type: type = None
     default: Any = None
     required: bool = True
-    reference: bool = True
 
-    def asdict(self):
+    def as_dict(self):
         openapi_dict = {
+            "required": self.required,
             "name": self.name,
             "in": self.location,
-            "required": self.required,
             "schema": {
-                self.data_type
-                if get_openapi_schema(self.data_type, self.reference)
-                else self.default
+                "title": self.name.title(),
             },
-            "title": self.name,
         }
+        if self.data_type is not None:
+            openapi_dict["schema"].update(get_openapi_schema(self.data_type))
+        if self.default:
+            openapi_dict["schema"]["default"] = self.default
         return openapi_dict
