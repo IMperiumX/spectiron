@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Optional, Protocol
+from typing import Protocol
 
 
 @dataclass
@@ -7,7 +7,7 @@ class BasicAuth:
     protocol_type: Protocol = "http"
     scheme: str = "basic"
 
-    def asdict(self):
+    def as_dict(self):
         return {"type": self.protocol_type, "scheme": self.scheme}
 
 
@@ -16,7 +16,7 @@ class BearerAuth:
     protocol_type: Protocol = "http"
     scheme: str = "bearer"
 
-    def asdict(self):
+    def as_dict(self):
         return {"type": self.protocol_type, "scheme": self.scheme}
 
 
@@ -26,17 +26,17 @@ class ApiKeyAuth:
     in_location: str = "header"
     name: str = "X-API-Key"
 
-    def asdict(self):
+    def as_dict(self):
         return {"type": self.protocol_type, "in": self.in_location, "name": self.name}
 
 
 @dataclass
 class OpenApiSecurity:
-    basic_auth: Optional[BasicAuth] = None
-    bearer_auth: Optional[BearerAuth] = None
-    api_key_auth: Optional[ApiKeyAuth] = None
+    basic_auth: BasicAuth | None = None
+    bearer_auth: BearerAuth | None = None
+    api_key_auth: ApiKeyAuth | None = None
 
-    def asdict(self):
+    def as_dict(self):
         auth_options = {}
         self._auth_handler(auth_options, self.basic_auth, "BasicAuth")
         self._auth_handler(auth_options, self.bearer_auth, "BearerAuth")
@@ -58,4 +58,4 @@ class OpenApiSecurity:
 
     def _auth_handler(self, auth_options, prop, key):
         if prop:
-            auth_options[key] = prop.asdict()
+            auth_options[key] = prop.as_dict()
