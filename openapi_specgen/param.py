@@ -23,6 +23,6 @@ class OpenApiParam:
                 if get_openapi_schema(self.data_type, self.reference)
                 else self.default
             },
-            "title": self.name.title(),
+            "title": self.name,
         }
         return openapi_dict

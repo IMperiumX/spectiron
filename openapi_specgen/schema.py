@@ -21,7 +21,7 @@ get_schema = lambda data_type: {
 }
 
 
-def get_openapi_array_schema(array_type: Type, item_type=None) -> Dict:
+def _get_openapi_array_schema(array_type: Type, item_type=None) -> Dict:
     openapi_array_type = get_list_generic_type(array_type)
 
     if isinstance(openapi_array_type, _GenericAlias):
@@ -67,5 +67,5 @@ def get_openapi_schema(data_type: Type, reference=True) -> Dict:
     if dataclasses.is_dataclass(data_type):
         return _get_openapi_schema_from_dataclass(data_type)
     if openapi_type == "array":
-        return get_openapi_array_schema(data_type)
+        return _get_openapi_array_schema(data_type)
     return {"type": openapi_type}

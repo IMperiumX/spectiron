@@ -17,10 +17,11 @@ class OpenApi:
         security Optional[OpenApiSecurity]: Optional OpenApiSecurity defining authentication options for this Api
     """
 
-    version: str = "0.1.0"
-    title: str = ""
     paths: List[OpenApiPath] = field(default_factory=list)
     security: Optional[OpenApiSecurity] = None
+
+    version: str = "0.1.0"
+    title: str = "OpenApi Title"
 
     def as_dict(self) -> dict:
         """
