@@ -1,16 +1,17 @@
 import dataclasses
 from typing import TypeVar
 
-import marshmallow
-
-from openapi_specgen.marshmallow_schema import get_openapi_schema_from_mashmallow_schema
-
 from .constants import (
     OPENAPI_ARRAY_ITEM_MAP,
     OPENAPI_DEFAULT_TYPE,
     get_list_generic,
     get_type,
 )
+
+# import marshmallow
+
+# from openapi_specgen.marshmallow_schema import get_openapi_schema_from_mashmallow_schema
+
 
 get_schema = lambda data_type: {
     data_type.__name__: {
@@ -60,8 +61,8 @@ def get_openapi_schema(data_type: type, reference=False) -> dict:
     openapi_type = get_type(data_type, OPENAPI_DEFAULT_TYPE)
     if reference:
         return {"$ref": f"#/components/schemas/{data_type.__name__}"}
-    if issubclass(data_type, marshmallow.Schema):
-        return get_openapi_schema_from_mashmallow_schema(data_type, reference=reference)
+    # if issubclass(data_type, marshmallow.Schema):
+    # return get_openapi_schema_from_mashmallow_schema(data_type, reference=reference)
     if dataclasses.is_dataclass(data_type):
         return _get_openapi_schema_from_dataclass(data_type)
     if data_type in OPENAPI_ARRAY_ITEM_MAP.keys():
