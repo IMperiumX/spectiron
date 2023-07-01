@@ -62,12 +62,6 @@
     - [:running: Run Locally](#running-run-locally)
   - [:eyes: Usage](#eyes-usage)
   - [:compass: Roadmap](#compass-roadmap)
-    - [Phase 1: Basic Functionality](#phase-1-basic-functionality)
-    - [Phase 2: Enhanced Extraction and Documentation](#phase-2-enhanced-extraction-and-documentation)
-    - [Phase 3: Language and Framework Support](#phase-3-language-and-framework-support)
-    - [Phase 4: Developer Experience and Tooling](#phase-4-developer-experience-and-tooling)
-    - [Phase 5: Advanced Features](#phase-5-advanced-features)
-    - [Phase 6: Updates and Maintenance](#phase-6-updates-and-maintenance)
   - [:wave: Contributing](#wave-contributing)
   - [Commiting your code](#commiting-your-code)
     - [:scroll: Code of Conduct](#scroll-code-of-conduct)
@@ -247,42 +241,42 @@ print(specification)
 <!-- Roadmap -->
 ## :compass: Roadmap
 
-### Phase 1: Basic Functionality
+- ### Phase 1: Basic Functionality
 
-- [] Parsing Source Code: Implement the ability to parse the source code of API projects written in one or more programming languages.
-- [] Endpoint Extraction: Extract API endpoints, HTTP methods, URL paths, query parameters, and request/response headers from the parsed source code.
-- [] Data Model Extraction: Identify data structures, request/response bodies, data types, required fields, and basic validation rules from the source code.
-- [] Documentation Generation: Generate an initial OpenAPI specification document based on the extracted information and provide options for customization.
+  - [ ] Parsing Source Code: Implement the ability to parse the source code of API projects written in one or more programming languages.
+  - [ ] Endpoint Extraction: Extract API endpoints, HTTP methods, URL paths, query parameters, and request/response headers from the parsed source code.
+  - [ ] Data Model Extraction: Identify data structures, request/response bodies, data types, required fields, and basic validation rules from the source code.
+  - [ ] Documentation Generation: Generate an initial OpenAPI specification document based on the extracted information and provide options for customization.
 
-### Phase 2: Enhanced Extraction and Documentation
+- ### Phase 2: Enhanced Extraction and Documentation
 
-- [] Advanced Endpoint Analysis: Improve endpoint extraction by handling more complex scenarios like route parameters, nested routes, and route patterns.
-- [] Request/Response Body Analysis: Enhance data model extraction to support nested objects, arrays, and more advanced validation rules.
-- [] Code Annotation Support: Introduce support for code annotations or comments that allow developers to provide additional information for the generator to use in the documentation.
-- [] Customization Options: Expand customization options to allow developers to specify details like response examples, API descriptions, and error handling.
+  - [ ] Advanced Endpoint Analysis: Improve endpoint extraction by handling more complex scenarios like route parameters, nested routes, and route patterns.
+  - [ ] Request/Response Body Analysis: Enhance data model extraction to support nested objects, arrays, and more advanced validation rules.
+  - [ ] Code Annotation Support: Introduce support for code annotations or comments that allow developers to provide additional information for the generator to use in the documentation.
+  - [ ] Customization Options: Expand customization options to allow developers to specify details like response examples, API descriptions, and error handling.
 
-### Phase 3: Language and Framework Support
+- ### Phase 3: Language and Framework Support
 
-- [] Support for Multiple Programming Languages: Add support for additional programming languages commonly used for API development.
-- [] Framework Integration: Integrate with popular web frameworks (e.g., Express.js, Django, Ruby on Rails) to enhance extraction capabilities specific to those frameworks.
+  - [ ] Support for Multiple Programming Languages: Add support for additional programming languages commonly used for API development.
+  - [ ] Framework Integration: Integrate with popular web frameworks (e.g., Express.js, Django, Ruby on Rails) to enhance extraction capabilities specific to those frameworks.
 
-### Phase 4: Developer Experience and Tooling
+- ### Phase 4: Developer Experience and Tooling
 
-- [] Command-Line Interface (CLI): Develop a CLI tool for easy configuration and execution of the OpenAPI generator.
-- [] Graphical User Interface (GUI): Create a user-friendly GUI for configuring and running the generator.
-- [] Build Process Integration: Provide seamless integration with common build tools and CI/CD pipelines for automatic generation of documentation during the development lifecycle.
+  - [ ] Command-Line Interface (CLI): Develop a CLI tool for easy configuration and execution of the OpenAPI generator.
+  - [ ] Graphical User Interface (GUI): Create a user-friendly GUI for configuring and running the generator.
+  - [ ] Build Process Integration: Provide seamless integration with common build tools and CI/CD pipelines for automatic generation of documentation during the development lifecycle.
 
-### Phase 5: Advanced Features
+- ### Phase 5: Advanced Features
 
-- [] Authentication and Authorization Support: Extend the generator to extract and document authentication mechanisms (e.g., OAuth, JWT) and authorization requirements.
-- [] Error Handling Documentation: Automatically extract error handling logic from the source code and include it in the generated documentation.
-- [] Versioning Support: Add support for documenting multiple versions of an API and handling version-specific endpoints and data models.
-- [] API Testing Integration: Integrate with API testing frameworks or tools to automatically generate test cases based on the OpenAPI specification.
+  - [ ] Authentication and Authorization Support: Extend the generator to extract and document authentication mechanisms (e.g., OAuth, JWT) and authorization requirements.
+  - [ ] Error Handling Documentation: Automatically extract error handling logic from the source code and include it in the generated documentation.
+  - [ ] Versioning Support: Add support for documenting multiple versions of an API and handling version-specific endpoints and data models.
+  - [ ] API Testing Integration: Integrate with API testing frameworks or tools to automatically generate test cases based on the OpenAPI specification.
 
-### Phase 6: Updates and Maintenance
+- ### Phase 6: Updates and Maintenance
 
-	- [] Stay Up-to-Date with OpenAPI Specification: Regularly update the generator to support the latest version of the OpenAPI specification.
-	- [] Monitor Language and Framework Updates: Keep track of updates in programming languages and frameworks to ensure compatibility and make necessary adjustments.
+  - [ ] Stay Up-to-Date with OpenAPI Specification: Regularly update the generator to support the latest version of the OpenAPI specification.
+  - [ ] Monitor Language and Framework Updates: Keep track of updates in programming languages and frameworks to ensure compatibility and make necessary adjustments.
 
 See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
 
