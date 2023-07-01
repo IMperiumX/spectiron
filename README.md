@@ -3,7 +3,8 @@
 <div align="center">
 
   <img src="https://placehold.co/250x250?text=Your+Logo+Here" alt="logo" alt="logo" width="200" height="auto" />
-  <details closes>
+
+<details closes>
   <summary><h1>specitron</h1></summary>
   It blends "spec" (short for specification) with "tron" (a reference to electronic and futuristic concepts), giving a tech-forward and modern impression.
 </details>
