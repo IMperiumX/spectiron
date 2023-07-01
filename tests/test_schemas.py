@@ -14,11 +14,11 @@ from .utils import DataclassNestedObject, DataclassObject
         (int, {"type": "integer"}),
         (float, {"type": "number"}),
         (bool, {"type": "boolean"}),
-        (List, {"type": "array", "items": {}}),
-        (List[str], {"type": "array", "items": {"type": "string"}}),
-        (List[int], {"type": "array", "items": {"type": "integer"}}),
-        (List[float], {"type": "array", "items": {"type": "number"}}),
-        (List[bool], {"type": "array", "items": {"type": "boolean"}}),
+        (list, {"type": "array", "items": {}}),
+        (list[str], {"type": "array", "items": {"type": "string"}}),
+        (list[int], {"type": "array", "items": {"type": "integer"}}),
+        (list[float], {"type": "array", "items": {"type": "number"}}),
+        (list[bool], {"type": "array", "items": {"type": "boolean"}}),
     ],
 )
 def test_openapi_schema(data_type, openapi_schema):
@@ -47,7 +47,7 @@ def test_dataclass_schema():
         }
     }
     assert expected_openapi_schema == get_openapi_schema(
-        DataclassObject, reference=True
+        DataclassObject,
     )
 
 
@@ -55,32 +55,33 @@ def test_nested_objects():
     expected_openapi_schema = {
         "DataclassNestedObject": {
             "title": "DataclassNestedObject",
-            "type": "object",
             "required": ["str_field", "nested_object"],
-            "properties": {
-                "str_field": {"type": "string"},
-                "nested_object": {"$ref": "#/components/schemas/DataclassObject"},
-            },
-        },
-        "DataclassObject": {
-            "title": "DataclassObject",
-            "required": [
-                "str_field",
-                "int_field",
-                "float_field",
-                "boolean_field",
-                "list_field",
-            ],
             "type": "object",
             "properties": {
                 "str_field": {"type": "string"},
-                "int_field": {"type": "integer"},
-                "float_field": {"type": "number"},
-                "boolean_field": {"type": "boolean"},
-                "list_field": {"type": "array", "items": {}},
+                "nested_object": {
+                    "DataclassObject": {
+                        "title": "DataclassObject",
+                        "required": [
+                            "str_field",
+                            "int_field",
+                            "float_field",
+                            "boolean_field",
+                            "list_field",
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "str_field": {"type": "string"},
+                            "int_field": {"type": "integer"},
+                            "float_field": {"type": "number"},
+                            "boolean_field": {"type": "boolean"},
+                            "list_field": {"type": "array", "items": {}},
+                        },
+                    }
+                },
             },
-        },
+        }
     }
     assert expected_openapi_schema == get_openapi_schema(
-        DataclassNestedObject, reference=True
+        DataclassNestedObject,
     )

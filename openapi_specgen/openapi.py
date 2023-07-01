@@ -1,8 +1,9 @@
 from dataclasses import dataclass, field
 from typing import List, Optional
 
+from .constants import OPENAPI_DEFAULT_TYPE, get_type
 from .path import OpenApiPath
-from .schema import get_openapi_schema, get_type
+from .schema import get_openapi_schema
 from .security import OpenApiSecurity
 
 
@@ -17,10 +18,11 @@ class OpenApi:
         security Optional[OpenApiSecurity]: Optional OpenApiSecurity defining authentication options for this Api
     """
 
+    paths: list[OpenApiPath] = field(default_factory=list)
+    security: OpenApiSecurity | None = None
+
     version: str = "0.1.0"
-    title: str = ""
-    paths: List[OpenApiPath] = field(default_factory=list)
-    security: Optional[OpenApiSecurity] = None
+    title: str = "OpenApi Title"
 
     def as_dict(self) -> dict:
         """
@@ -33,6 +35,7 @@ class OpenApi:
             "paths": {},
             "components": {"schemas": {}},
         }
+
         for openapi_path in self.paths:
             if openapi_dict["paths"].get(openapi_path.path) is None:
                 openapi_dict["paths"][openapi_path.path] = {}
@@ -41,21 +44,24 @@ class OpenApi:
             )
 
             if openapi_path.request_body:
-                if get_type(openapi_path.request_body) == "object":
+                if (
+                    get_type(openapi_path.request_body, OPENAPI_DEFAULT_TYPE)
+                    == "object"
+                ):
                     openapi_dict["components"]["schemas"].update(
-                        get_openapi_schema(openapi_path.request_body, reference=False)
+                        get_openapi_schema(openapi_path.request_body)
                     )
 
             for param in openapi_path.params:
-                if get_type(param.data_type) == "object":
+                if get_type(param.data_type, OPENAPI_DEFAULT_TYPE) == "object":
                     openapi_dict["components"]["schemas"].update(
-                        get_openapi_schema(param.data_type, reference=False)
+                        get_openapi_schema(param.data_type)
                     )
 
             for resp in openapi_path.responses:
-                if get_type(resp.data_type) == "object":
+                if get_type(resp.data_type, OPENAPI_DEFAULT_TYPE) == "object":
                     openapi_dict["components"]["schemas"].update(
-                        get_openapi_schema(resp.data_type, reference=False)
+                        get_openapi_schema(resp.data_type)
                     )
             if self.security:
                 openapi_dict["security"] = self.security.get_security_reference()

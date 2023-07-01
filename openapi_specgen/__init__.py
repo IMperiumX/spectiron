@@ -1,15 +1,16 @@
 """Top-level package for openapi-specgen."""
-from .openapi import OpenApi
-from .param import OpenApiParam
-from .path import OpenApiPath
-from .response import OpenApiResponse
-from .security import ApiKeyAuth, BearerAuth, OpenApiSecurity
+from openapi_specgen.openapi import OpenApi
+from openapi_specgen.param import OpenApiParam
+from openapi_specgen.path import OpenApiPath
+from openapi_specgen.response import OpenApiResponse
+from openapi_specgen.security import ApiKeyAuth, BasicAuth, BearerAuth, OpenApiSecurity
 
 __all__ = [
     "OpenApi",
     "OpenApiParam",
     "OpenApiPath",
     "OpenApiResponse",
+    "BasicAuth",
     "ApiKeyAuth",
     "BearerAuth",
     "OpenApiSecurity",

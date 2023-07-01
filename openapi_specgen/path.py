@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from typing import List
+from typing import Any, List
 
 from openapi_specgen.param import OpenApiParam
 from openapi_specgen.response import OpenApiResponse
@@ -10,28 +10,28 @@ from openapi_specgen.schema import get_openapi_schema
 class OpenApiPath:
     path: str
     method: str
-    responses: List[OpenApiResponse] = field(default_factory=list)
 
-    # make params optional & fix dataclasses ValueError with mutable default
-    # Stackoverflow:https://stackoverflow.com/questions/53632152/why-cant-dataclasses-have-mutable-defaults-in-their-class-attributes-declaratio
-    params: List[OpenApiParam] = field(default_factory=list)
+    responses: list[OpenApiResponse] = field(default_factory=list)
+    params: list[OpenApiParam] = field(default_factory=list)
 
-    descr: str = "Description of the endpoint"
+    description: str = "Description of the endpoint"
     summary: str = "Summary of the endpoint"
+    request_body: Any = None
 
-    def asdict(self):
+    def as_dict(self):
+        self.method = self.method.upper()
         openapi_dict = {
             self.path: {
-                self.method.upper(): {
-                    "description": self.descr,
+                self.method: {
+                    "description": self.description,
                     "summary": self.summary,
                     "operationId": f"[{self.method.upper()}]_{self.path}",
                     "responses": {
                         k: v
                         for response in self.responses
-                        for k, v in response.asdict().items()
+                        for k, v in response.as_dict().items()
                     },
-                    "parameters": [param.asdict() for param in self.params],
+                    "parameters": [param.as_dict() for param in self.params],
                 }
             }
         }
