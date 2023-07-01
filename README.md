@@ -326,13 +326,25 @@ Please read the [Code of Conduct](https://github.com/imperiumx/specitron/blob/ma
 <!-- FAQ -->
 ## :grey_question: FAQ
 
-- Question 1
+<details closes>
+  <summary>What is an OpenAPI specification?</summary>
+  <p>An OpenAPI specification is a standardized way to describe and document RESTful APIs. It defines the endpoints, request/response formats, parameters, and other details required to interact with an API.</p>
+</details>
 
-  - Answer 1
+<details closes>
+  <summary>How does an OpenAPI specification generator work?</summary>
+  <p>OpenAPI specification generators typically analyze source code or API endpoints to extract information about the available endpoints, request/response formats, parameters, and other relevant details. They use this information to automatically generate the OpenAPI specification file, usually in JSON or YAML format.</p>
+</details>
 
-- Question 2
+<details closes>
+  <summary>Can an OpenAPI specification generator support multiple programming languages?</summary>
+  <p>Yes, many OpenAPI specification generators are designed to support multiple programming languages. They can analyze code written in various languages such as Python, JavaScript, Java, Ruby, and more, and generate the corresponding OpenAPI specification.</p>
+</details>
 
-  - Answer 2
+<details closes>
+  <summary>Can an OpenAPI specification generator be integrated into existing workflows or tools?</summary>
+  <p>Yes, most OpenAPI specification generators offer integrations with popular development tools and workflows. They can be integrated into build systems, continuous integration/continuous deployment (CI/CD) pipelines, documentation platforms, and API management systems to automate the process of generating and updating API specifications.</p>
+</details>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
