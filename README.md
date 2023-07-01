@@ -3,10 +3,13 @@
 <div align="center">
 
   <img src="https://placehold.co/250x250?text=Your+Logo+Here" alt="logo" alt="logo" width="200" height="auto" />
-  <h1>specitron</h1>
+  <details closes>
+  <summary><h1>specitron</h1></summary>
+  It blends "spec" (short for specification) with "tron" (a reference to electronic and futuristic concepts), giving a tech-forward and modern impression.
+</details>
 
   <p>
-    Automate API documentation generation through advanced code analysis, ensuring accurate and up-to-date documentation. Utilize intelligent source code examination to produce precise and synchronized API documentation, saving time and guaranteeing accuracy. Enable developers to focus on core tasks while maintaining a well-documented API ecosystem.
+    seamlessly generate comprehensive and dynamically updated API documentation.
   </p>
 
 <!-- Badges -->
@@ -77,6 +80,7 @@
 
 Automate API documentation generation through advanced code analysis, ensuring accurate and up-to-date documentation. Utilize intelligent source code examination to produce precise and synchronized API documentation, saving time and guaranteeing accuracy. Enable developers to focus on core tasks while maintaining a well-documented API ecosystem.
 
+Note: This project is still in development and is not ready for production use.
 <!-- Screenshots -->
 ### :camera: Screenshots
 
