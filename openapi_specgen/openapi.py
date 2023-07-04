@@ -34,40 +34,41 @@ class OpenApi:
         """
         openapi_dict = {
             "openapi": self.version,
-            "info": {"title": self.title, "version": self.version},
+            "info": {
+                "title": self.title,
+                "version": self.version
+            },
             "paths": {},
-            "components": {"schemas": {}},
+            "components": {
+                "schemas": {}
+            },
         }
 
         for openapi_path in self.paths:
             if openapi_dict["paths"].get(openapi_path.path) is None:
                 openapi_dict["paths"][openapi_path.path] = {}
             openapi_dict["paths"][openapi_path.path].update(
-                openapi_path.as_dict()[openapi_path.path]
-            )
+                openapi_path.as_dict()[openapi_path.path])
 
             if openapi_path.request_body:
-                if (
-                    get_type(openapi_path.request_body, OPENAPI_DEFAULT_TYPE)
-                    == "object"
-                ):
+                if (get_type(openapi_path.request_body,
+                             OPENAPI_DEFAULT_TYPE) == "object"):
                     openapi_dict["components"]["schemas"].update(
-                        get_openapi_schema(openapi_path.request_body)
-                    )
+                        get_openapi_schema(openapi_path.request_body))
 
             for param in openapi_path.params:
                 if get_type(param.data_type, OPENAPI_DEFAULT_TYPE) == "object":
                     openapi_dict["components"]["schemas"].update(
-                        get_openapi_schema(param.data_type)
-                    )
+                        get_openapi_schema(param.data_type))
 
             for resp in openapi_path.responses:
                 if get_type(resp.data_type, OPENAPI_DEFAULT_TYPE) == "object":
                     openapi_dict["components"]["schemas"].update(
-                        get_openapi_schema(resp.data_type)
-                    )
+                        get_openapi_schema(resp.data_type))
             if self.security:
-                openapi_dict["security"] = self.security.get_security_reference()
-                openapi_dict["components"]["securitySchemes"] = self.security.as_dict()
+                openapi_dict[
+                    "security"] = self.security.get_security_reference()
+                openapi_dict["components"][
+                    "securitySchemes"] = self.security.as_dict()
 
         return openapi_dict

@@ -28,7 +28,11 @@ class ApiKeyAuth:
     name: str = "X-API-Key"
 
     def as_dict(self):
-        return {"type": self.protocol_type, "in": self.in_location, "name": self.name}
+        return {
+            "type": self.protocol_type,
+            "in": self.in_location,
+            "name": self.name
+        }
 
 
 @dataclass
