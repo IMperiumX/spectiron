@@ -1,4 +1,5 @@
-from datetime import date, datetime
+from datetime import date
+from datetime import datetime
 from typing import List
 
 OPENAPI_DEFAULT_TYPE = "object"

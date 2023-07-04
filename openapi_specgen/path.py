@@ -1,5 +1,7 @@
-from dataclasses import dataclass, field
-from typing import Any, List
+from dataclasses import dataclass
+from dataclasses import field
+from typing import Any
+from typing import List
 
 from openapi_specgen.param import OpenApiParam
 from openapi_specgen.response import OpenApiResponse

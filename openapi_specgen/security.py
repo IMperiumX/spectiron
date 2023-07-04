@@ -1,5 +1,6 @@
 from dataclasses import dataclass
-from typing import Protocol, Union
+from typing import Protocol
+from typing import Union
 
 
 @dataclass

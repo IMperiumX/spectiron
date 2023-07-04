@@ -1,7 +1,10 @@
-from dataclasses import dataclass, field
-from typing import List, Union
+from dataclasses import dataclass
+from dataclasses import field
+from typing import List
+from typing import Union
 
-from .constants import OPENAPI_DEFAULT_TYPE, get_type
+from .constants import get_type
+from .constants import OPENAPI_DEFAULT_TYPE
 from .path import OpenApiPath
 from .schema import get_openapi_schema
 from .security import OpenApiSecurity
