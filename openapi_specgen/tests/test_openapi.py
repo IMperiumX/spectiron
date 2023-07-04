@@ -9,9 +9,8 @@ from django.test import RequestFactory
 from rest_framework import routers
 from rest_framework.request import Request
 
-from openapi_specgen import SchemaGenerator
-
 from . import views
+from openapi_specgen import SchemaGenerator
 
 
 def create_request(path):

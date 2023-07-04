@@ -5,7 +5,8 @@ from django.conf import settings
 from django.contrib.admindocs.views import simplify_regex
 from django.core.exceptions import PermissionDenied
 from django.http import Http404
-from django.urls import URLPattern, URLResolver
+from django.urls import URLPattern
+from django.urls import URLResolver
 from rest_framework import exceptions
 from rest_framework.request import clone_request
 from rest_framework.settings import api_settings
