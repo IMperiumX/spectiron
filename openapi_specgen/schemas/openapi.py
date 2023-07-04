@@ -5,6 +5,7 @@ from .generators import BaseSchemaGenerator
 
 
 class SchemaGenerator(BaseSchemaGenerator):
+
     def get_info(self):
         # Title and version are required by openapi specification 3.x
         info = {"title": self.title or "", "version": self.version or ""}
@@ -26,14 +27,14 @@ class SchemaGenerator(BaseSchemaGenerator):
                         "You have a duplicated operationId in your OpenAPI schema: {operation_id}\n"
                         "\tRoute: {route1}, Method: {method1}\n"
                         "\tRoute: {route2}, Method: {method2}\n"
-                        "\tAn operationId has to be unique across your schema. Your schema may not work in other tools.".format(
+                        "\tAn operationId has to be unique across your schema. Your schema may not work in other tools."
+                        .format(
                             route1=ids[operation_id]["route"],
                             method1=ids[operation_id]["method"],
                             route2=route,
                             method2=method,
                             operation_id=operation_id,
-                        )
-                    )
+                        ))
                 ids[operation_id] = {"route": route, "method": method}
 
     def get_schema(self, request=None, public=False):
@@ -45,7 +46,8 @@ class SchemaGenerator(BaseSchemaGenerator):
 
         # Iterate endpoints generating per method path operations.
         paths = {}
-        _, view_endpoints = self._get_paths_and_endpoints(None if public else request)
+        _, view_endpoints = self._get_paths_and_endpoints(
+            None if public else request)
         for path, method, view in view_endpoints:
             if not self.has_view_permissions(path, method, view):
                 continue
@@ -58,10 +60,8 @@ class SchemaGenerator(BaseSchemaGenerator):
                 if components_schemas[k] == components[k]:
                     continue
                 warnings.warn(
-                    'Schema component "{}" has been overriden with a different value.'.format(
-                        k
-                    )
-                )
+                    'Schema component "{}" has been overriden with a different value.'
+                    .format(k))
 
             components_schemas.update(components)
 

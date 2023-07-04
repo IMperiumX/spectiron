@@ -31,15 +31,18 @@ def is_api_view(callback):
 
 def endpoint_ordering(endpoint):
     path, method, callback = endpoint
-    method_priority = {"GET": 0, "POST": 1, "PUT": 2, "PATCH": 3, "DELETE": 4}.get(
-        method, 5
-    )
-    return (method_priority,)
+    method_priority = {
+        "GET": 0,
+        "POST": 1,
+        "PUT": 2,
+        "PATCH": 3,
+        "DELETE": 4
+    }.get(method, 5)
+    return (method_priority, )
 
 
 _PATH_PARAMETER_COMPONENT_RE = re.compile(
-    r"<(?:(?P<converter>[^>:]+):)?(?P<parameter>\w+)>"
-)
+    r"<(?:(?P<converter>[^>:]+):)?(?P<parameter>\w+)>")
 
 
 class EndpointEnumerator:
@@ -83,8 +86,7 @@ class EndpointEnumerator:
 
             elif isinstance(pattern, URLResolver):
                 nested_endpoints = self.get_api_endpoints(
-                    patterns=pattern.url_patterns, prefix=path_regex
-                )
+                    patterns=pattern.url_patterns, prefix=path_regex)
                 api_endpoints.extend(nested_endpoints)
 
         return sorted(api_endpoints, key=endpoint_ordering)
@@ -128,11 +130,15 @@ class EndpointEnumerator:
         if hasattr(callback, "actions"):
             actions = set(callback.actions)
             http_method_names = set(callback.cls.http_method_names)
-            methods = [method.upper() for method in actions & http_method_names]
+            methods = [
+                method.upper() for method in actions & http_method_names
+            ]
         else:
             methods = callback.cls().allowed_methods
 
-        return [method for method in methods if method not in ("OPTIONS", "HEAD")]
+        return [
+            method for method in methods if method not in ("OPTIONS", "HEAD")
+        ]
 
 
 class BaseSchemaGenerator:
@@ -167,7 +173,8 @@ class BaseSchemaGenerator:
 
     def _initialise_endpoints(self):
         if self.endpoints is None:
-            inspector = self.endpoint_inspector_cls(self.patterns, self.urlconf)
+            inspector = self.endpoint_inspector_cls(self.patterns,
+                                                    self.urlconf)
             self.endpoints = inspector.get_api_endpoints()
 
     def _get_paths_and_endpoints(self, request):
@@ -223,7 +230,8 @@ class BaseSchemaGenerator:
         return path.replace("{pk}", "{%s}" % field_name)
 
     def get_schema(self, request=None, public=False):
-        raise NotImplementedError(".get_schema() must be implemented in subclasses.")
+        raise NotImplementedError(
+            ".get_schema() must be implemented in subclasses.")
 
     def has_view_permissions(self, path, method, view):
         """
