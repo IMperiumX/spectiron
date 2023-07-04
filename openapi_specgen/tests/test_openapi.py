@@ -10,6 +10,7 @@ from rest_framework import routers
 from rest_framework.request import Request
 
 from openapi_specgen import SchemaGenerator
+
 from . import views
 
 

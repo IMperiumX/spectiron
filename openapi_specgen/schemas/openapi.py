@@ -1,5 +1,6 @@
 import warnings
 from urllib.parse import urljoin
+
 from .generators import BaseSchemaGenerator
 
 
