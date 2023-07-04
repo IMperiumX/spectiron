@@ -11,8 +11,8 @@ class OpenApiPath:
     path: str
     method: str
 
-    responses: list[OpenApiResponse] = field(default_factory=list)
-    params: list[OpenApiParam] = field(default_factory=list)
+    responses: List[OpenApiResponse] = field(default_factory=list)
+    params: List[OpenApiParam] = field(default_factory=list)
 
     description: str = "Description of the endpoint"
     summary: str = "Summary of the endpoint"

@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Protocol
+from typing import Protocol, Union
 
 
 @dataclass
@@ -32,9 +32,9 @@ class ApiKeyAuth:
 
 @dataclass
 class OpenApiSecurity:
-    basic_auth: BasicAuth | None = None
-    bearer_auth: BearerAuth | None = None
-    api_key_auth: ApiKeyAuth | None = None
+    basic_auth: Union[BasicAuth, None] = None
+    bearer_auth: Union[BearerAuth, None] = None
+    api_key_auth: Union[ApiKeyAuth, None] = None
 
     def as_dict(self):
         auth_options = dict()

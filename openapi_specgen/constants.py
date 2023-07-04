@@ -1,4 +1,5 @@
 from datetime import date, datetime
+from typing import List
 
 OPENAPI_DEFAULT_TYPE = "object"
 
@@ -18,14 +19,14 @@ OPENAPI_FORMAT_MAP = {
 }
 
 OPENAPI_ARRAY_ITEM_MAP = {
-    list[str]: "string",
-    list[float]: "number",
-    list[int]: "integer",
-    list[bool]: "boolean",
-    list[date]: "date",
-    list[datetime]: "date-time",
-    list[list]: "array",
-    list: None,
+    List[str]: "string",
+    List[float]: "number",
+    List[int]: "integer",
+    List[bool]: "boolean",
+    List[date]: "date",
+    List[datetime]: "date-time",
+    List[List]: "array",
+    List: None,
 }
 
 
@@ -34,7 +35,7 @@ get_format = OPENAPI_FORMAT_MAP.get
 get_list_generic = OPENAPI_ARRAY_ITEM_MAP.get
 
 
-OPENAPI_FORMATS = OPENAPI_TYPE_MAP | OPENAPI_FORMAT_MAP | OPENAPI_ARRAY_ITEM_MAP
+OPENAPI_FORMATS = {**OPENAPI_TYPE_MAP, **OPENAPI_FORMAT_MAP, **OPENAPI_ARRAY_ITEM_MAP}
 
 
 __all__ = [
