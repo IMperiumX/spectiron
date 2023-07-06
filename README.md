@@ -258,23 +258,23 @@ print(specification)
 ## :compass: Roadmap
 
 - ### Phase 1: Basic Functionality
-  
-  - [ ] Parsing Source Code: Implement the ability to parse the source code of API projects written in one or more programming languages.
-  - [ ] Endpoint Extraction: Extract API endpoints, HTTP methods, URL paths, query parameters, and request/response headers from the parsed source code.
-  - [ ] Data Model Extraction: Identify data structures, request/response bodies, data types, required fields, and basic validation rules from the source code.
-  - [ ] Documentation Generation: Generate an initial OpenAPI specification document based on the extracted information and provide options for customization.
+
+  - [x] Parsing Source Code: Implement the ability to parse the source code of API projects written in one or more programming languages.
+  - [x] Endpoint Extraction: Extract API endpoints, HTTP methods, URL paths, query parameters, and request/response headers from the parsed source code.
+  - [x] Data Model Extraction: Identify data structures, request/response bodies, data types, required fields, and basic validation rules from the source code.
+  - [x] Documentation Generation: Generate an initial OpenAPI specification document based on the extracted information and provide options for customization.
 
 - ### Phase 2: Enhanced Extraction and Documentation
   
-  - [ ] Advanced Endpoint Analysis: Improve endpoint extraction by handling more complex scenarios like route parameters, nested routes, and route patterns.
-  - [ ] Request/Response Body Analysis: Enhance data model extraction to support nested objects, arrays, and more advanced validation rules.
+  - [x] Advanced Endpoint Analysis: Improve endpoint extraction by handling more complex scenarios like route parameters, nested routes, and route patterns.
+  - [x] Request/Response Body Analysis: Enhance data model extraction to support nested objects, arrays, and more advanced validation rules.
   - [ ] Code Annotation Support: Introduce support for code annotations or comments that allow developers to provide additional information for the generator to use in the documentation.
   - [ ] Customization Options: Expand customization options to allow developers to specify details like response examples, API descriptions, and error handling.
 
 - ### Phase 3: Language and Framework Support
   
-  - [ ] Support for Multiple Programming Languages: Add support for additional programming languages commonly used for API development.
-  - [ ] Framework Integration: Integrate with popular web frameworks (e.g., Express.js, Django, Ruby on Rails) to enhance extraction capabilities specific to those frameworks.
+  - [x] Support for Multiple Programming Languages: Add support for additional programming languages commonly used for API development(Python for now).
+  - [x] Framework Integration: Integrate with popular web frameworks (e.g., Express.js, Django, Ruby on Rails) to enhance extraction capabilities specific to those frameworks(DRF for now).
 
 - ### Phase 4: Developer Experience and Tooling
   
