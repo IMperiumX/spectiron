@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="./assets/logo-plus.png" alt="logo" alt="logo" width="200" height="auto" />
+<img src="./assets/logo-rembg-plus.png" alt="logo" alt="logo" width="200" height="auto" />
 
 <details closes>
   <summary><h1>specitron</h1></summary>
@@ -91,7 +91,7 @@ Note: This project is still in development and is not ready for production use.
 ### :camera: Screenshots
 
 <div align="center">
-  <img src="./assets/logo-plus.png" alt="screenshot" />
+  <img src="./assets/logo-rembg-plus.png" alt="screenshot" />
 </div>
 
 <!-- TechStack -->
