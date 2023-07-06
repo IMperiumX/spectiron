@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="./assets/logo.png" alt="logo" alt="logo" width="200" height="auto" />
+<img src="./assets/logo-plus.png" alt="logo" alt="logo" width="200" height="auto" />
 
 <details closes>
   <summary><h1>specitron</h1></summary>
