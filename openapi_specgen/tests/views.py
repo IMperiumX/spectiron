@@ -1,8 +1,8 @@
 import uuid
 
+from django.db import models
 from rest_framework import serializers
 from rest_framework.viewsets import ViewSet
-from django.db import models
 
 
 class OpenAPIExample(models.Model):
