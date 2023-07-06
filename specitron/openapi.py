@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from typing import List, Optional
+from typing import List, Union
 
 from .constants import OPENAPI_DEFAULT_TYPE, get_type
 from .path import OpenApiPath
@@ -18,8 +18,8 @@ class OpenApi:
         security Optional[OpenApiSecurity]: Optional OpenApiSecurity defining authentication options for this Api
     """
 
-    paths: list[OpenApiPath] = field(default_factory=list)
-    security: OpenApiSecurity | None = None
+    paths: List[OpenApiPath] = field(default_factory=list)
+    security: Union[OpenApiSecurity, None] = None
 
     version: str = "0.1.0"
     title: str = "OpenApi Title"
