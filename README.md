@@ -2,18 +2,19 @@
 
 <div align="center">
 
-  <img src="https://placehold.co/250x250?text=Your+Logo+Here" alt="logo" alt="logo" width="200" height="auto" />
+<img src="./assets/logo.png" alt="logo" alt="logo" width="200" height="auto" />
 
 <details closes>
   <summary><h1>specitron</h1></summary>
   It blends "spec" (short for specification) with "tron" (a reference to electronic and futuristic concepts), giving a tech-forward and modern impression.
 </details>
 
-  <p>
+<p>
     seamlessly generate comprehensive and dynamically updated API documentation.
   </p>
 
 <!-- Badges -->
+
 <p>
   <a href="https://github.com/imperiumx/specitron/graphs/contributors">
     <img src="https://img.shields.io/github/contributors/imperiumx/specitron" alt="contributors" />
@@ -50,6 +51,7 @@
 <br/>
 
 <!-- Table of Contents -->
+
 # :notebook_with_decorative_cover: Table of Contents
 
 - [:notebook\_with\_decorative\_cover: Table of Contents](#notebook_with_decorative_cover-table-of-contents)
@@ -77,19 +79,23 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- About the Project -->
+
 ## :star2: About specitron
 
 Automate API documentation generation through advanced code analysis, ensuring accurate and up-to-date documentation. Utilize intelligent source code examination to produce precise and synchronized API documentation, saving time and guaranteeing accuracy. Enable developers to focus on core tasks while maintaining a well-documented API ecosystem.
 
 Note: This project is still in development and is not ready for production use.
+
 <!-- Screenshots -->
+
 ### :camera: Screenshots
 
 <div align="center">
-  <img src="https://placehold.co/600x400?text=Your+Screenshot+here" alt="screenshot" />
+  <img src="./assets/logo-plus.png" alt="screenshot" />
 </div>
 
 <!-- TechStack -->
+
 ### :space_invader: Tech Stack
 
 <details closes>
@@ -135,9 +141,11 @@ Note: This project is still in development and is not ready for production use.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Getting Started -->
+
 ## :toolbox: Getting Started
 
 <!-- Prerequisites -->
+
 ### :bangbang: Prerequisites
 
 activate virtualenv and install requirements
@@ -157,6 +165,7 @@ Via pip into a `virtualenv`:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Running Tests -->
+
 ### Type checks
 
 Running type checks with mypy:
@@ -186,6 +195,7 @@ To run the tests, check your test coverage, and generate an HTML coverage report
 ```
 
 <!-- Run Locally -->
+
 ### :running: Run Locally
 
 Clone the project
@@ -216,6 +226,7 @@ Start the server
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Usage -->
+
 ## :eyes: Usage
 
 ```python
@@ -240,46 +251,46 @@ with open('openapi.json', 'w') as f:
 
 # Alternatively, you can also print the specification
 print(specification)
-
 ```
 
 <!-- Roadmap -->
+
 ## :compass: Roadmap
 
 - ### Phase 1: Basic Functionality
-
+  
   - [ ] Parsing Source Code: Implement the ability to parse the source code of API projects written in one or more programming languages.
   - [ ] Endpoint Extraction: Extract API endpoints, HTTP methods, URL paths, query parameters, and request/response headers from the parsed source code.
   - [ ] Data Model Extraction: Identify data structures, request/response bodies, data types, required fields, and basic validation rules from the source code.
   - [ ] Documentation Generation: Generate an initial OpenAPI specification document based on the extracted information and provide options for customization.
 
 - ### Phase 2: Enhanced Extraction and Documentation
-
+  
   - [ ] Advanced Endpoint Analysis: Improve endpoint extraction by handling more complex scenarios like route parameters, nested routes, and route patterns.
   - [ ] Request/Response Body Analysis: Enhance data model extraction to support nested objects, arrays, and more advanced validation rules.
   - [ ] Code Annotation Support: Introduce support for code annotations or comments that allow developers to provide additional information for the generator to use in the documentation.
   - [ ] Customization Options: Expand customization options to allow developers to specify details like response examples, API descriptions, and error handling.
 
 - ### Phase 3: Language and Framework Support
-
+  
   - [ ] Support for Multiple Programming Languages: Add support for additional programming languages commonly used for API development.
   - [ ] Framework Integration: Integrate with popular web frameworks (e.g., Express.js, Django, Ruby on Rails) to enhance extraction capabilities specific to those frameworks.
 
 - ### Phase 4: Developer Experience and Tooling
-
+  
   - [ ] Command-Line Interface (CLI): Develop a CLI tool for easy configuration and execution of the OpenAPI generator.
   - [ ] Graphical User Interface (GUI): Create a user-friendly GUI for configuring and running the generator.
   - [ ] Build Process Integration: Provide seamless integration with common build tools and CI/CD pipelines for automatic generation of documentation during the development lifecycle.
 
 - ### Phase 5: Advanced Features
-
+  
   - [ ] Authentication and Authorization Support: Extend the generator to extract and document authentication mechanisms (e.g., OAuth, JWT) and authorization requirements.
   - [ ] Error Handling Documentation: Automatically extract error handling logic from the source code and include it in the generated documentation.
   - [ ] Versioning Support: Add support for documenting multiple versions of an API and handling version-specific endpoints and data models.
   - [ ] API Testing Integration: Integrate with API testing frameworks or tools to automatically generate test cases based on the OpenAPI specification.
 
 - ### Phase 6: Updates and Maintenance
-
+  
   - [ ] Stay Up-to-Date with OpenAPI Specification: Regularly update the generator to support the latest version of the OpenAPI specification.
   - [ ] Monitor Language and Framework Updates: Keep track of updates in programming languages and frameworks to ensure compatibility and make necessary adjustments.
 
@@ -288,6 +299,7 @@ See the [open issues](https://github.com/othneildrew/Best-README-Template/issues
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Contributing -->
+
 ## :wave: Contributing
 
 <a href="https://github.com/imperiumx/specitron/graphs/contributors">
@@ -320,11 +332,13 @@ This will ensure that your code is cleaned before you commit it.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Code of Conduct -->
+
 ### :scroll: Code of Conduct
 
 Please read the [Code of Conduct](https://github.com/imperiumx/specitron/blob/master/CODE_OF_CONDUCT.md)
 
 <!-- FAQ -->
+
 ## :grey_question: FAQ
 
 <details closes>
@@ -350,11 +364,13 @@ Please read the [Code of Conduct](https://github.com/imperiumx/specitron/blob/ma
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- License -->
+
 ## :warning: License
 
 Distributed under the no License. See LICENSE.txt for more information.
 
 <!-- Contact -->
+
 ## :handshake: Contact
 
 Your Name - [@imperiumxx](https://twitter.com/imperiumxx) - <imperiumx.dev@gmail.com>
@@ -364,6 +380,7 @@ LinkedIn: [https://www.linkedin.com/in/imperiumx/](https://www.linkedin.com/in/i
 Project Link: [https://github.com/imperiumx/specitron](https://github.com/imperiumx/specitron)
 
 <!-- Acknowledgments -->
+
 ## :gem: Acknowledgements
 
 Use this section to mention useful resources and libraries that you have used in your projects.
