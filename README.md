@@ -357,9 +357,9 @@ Distributed under the no License. See LICENSE.txt for more information.
 <!-- Contact -->
 ## :handshake: Contact
 
-Your Name - [@imperiumxx](https://twitter.com/imperiumxx) - <yusufadell.dev@gmail.com>
+Your Name - [@imperiumxx](https://twitter.com/imperiumxx) - <imperiumx.dev@gmail.com>
 
-LinkedIn: [https://www.linkedin.com/in/yusufadell/](https://www.linkedin.com/in/imperiumx/)
+LinkedIn: [https://www.linkedin.com/in/imperiumx/](https://www.linkedin.com/in/imperiumx/)
 
 Project Link: [https://github.com/imperiumx/specitron](https://github.com/imperiumx/specitron)
 

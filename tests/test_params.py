@@ -2,7 +2,7 @@ from typing import List
 
 import pytest
 
-from openapi_specgen import OpenApiParam
+from specitron import OpenApiParam
 
 
 @pytest.mark.parametrize("location", [("query"), ("path"), ("header"), ("cookie")])

@@ -1,4 +1,4 @@
-"""Console script for openapi_specgen."""
+"""Console script for specitron."""
 import sys
 
 import click
@@ -6,10 +6,8 @@ import click
 
 @click.command()
 def main(args=None):
-    """Console script for openapi_specgen."""
-    click.echo(
-        "Replace this message by putting your code into " "openapi_specgen.cli.main"
-    )
+    """Console script for specitron."""
+    click.echo("Replace this message by putting your code into " "specitron.cli.main")
     click.echo("See click documentation at https://click.palletsprojects.com/")
     return 0
 

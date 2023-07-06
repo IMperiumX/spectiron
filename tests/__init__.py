@@ -1,1 +1,1 @@
-"""Unit test package for openapi_specgen."""
+"""Unit test package for specitron."""

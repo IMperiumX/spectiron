@@ -1,9 +1,9 @@
 from dataclasses import dataclass, field
 from typing import Any, List
 
-from openapi_specgen.param import OpenApiParam
-from openapi_specgen.response import OpenApiResponse
-from openapi_specgen.schema import get_openapi_schema
+from specitron.param import OpenApiParam
+from specitron.response import OpenApiResponse
+from specitron.schema import get_openapi_schema
 
 
 @dataclass

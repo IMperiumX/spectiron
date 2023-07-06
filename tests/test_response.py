@@ -1,6 +1,6 @@
 import pytest
 
-from openapi_specgen import OpenApiResponse
+from specitron import OpenApiResponse
 from tests.utils import DataclassObject
 
 

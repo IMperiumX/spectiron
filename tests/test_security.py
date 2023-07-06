@@ -1,4 +1,4 @@
-from openapi_specgen import OpenApiSecurity, BasicAuth, BearerAuth, ApiKeyAuth
+from specitron import OpenApiSecurity, BasicAuth, BearerAuth, ApiKeyAuth
 
 
 def test_openapi_security_referece():

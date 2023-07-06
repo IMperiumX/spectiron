@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
-"""Tests for `openapi_specgen` package."""
+"""Tests for `specitron` package."""
 
 
 import pytest
 from click.testing import CliRunner
 
-from openapi_specgen import (
+from specitron import (
     ApiKeyAuth,
     BasicAuth,
     BearerAuth,
@@ -41,7 +41,7 @@ def test_command_line_interface():
     runner = CliRunner()
     result = runner.invoke(cli.main)
     assert result.exit_code == 0
-    assert "openapi_specgen.cli.main" in result.output
+    assert "specitron.cli.main" in result.output
     help_result = runner.invoke(cli.main, ["--help"])
     assert help_result.exit_code == 0
     assert "--help  Show this message and exit." in help_result.output

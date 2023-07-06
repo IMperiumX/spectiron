@@ -11,7 +11,7 @@ You can contribute in many ways:
 
 ## Report Bugs
 
-Report bugs at <https://github.com/yusufadell/openapi_specgen/issues>.
+Report bugs at <https://github.com/imperiumx/specitron/issues>.
 
 If you are reporting a bug, please include:
 
@@ -33,14 +33,14 @@ implement it.
 
 ## Write Documentation
 
-openapi-specgen could always use more documentation, whether as part of
-the official openapi-specgen docs, in docstrings, or even on the web in
+specitron could always use more documentation, whether as part of
+the official specitron docs, in docstrings, or even on the web in
 blog posts, articles, and such.
 
 ## Submit Feedback
 
 The best way to send feedback is to file an issue at
-<https://github.com/yusufadell/openapi_specgen/issues>.
+<https://github.com/imperiumx/specitron/issues>.
 
 If you are proposing a feature:
 
@@ -52,15 +52,15 @@ If you are proposing a feature:
 
 # Get Started!
 
-Ready to contribute? Here\'s how to set up [openapi_specgen]{.title-ref}
+Ready to contribute? Here\'s how to set up [specitron]{.title-ref}
 for local development.
 
-1.  Fork the [openapi_specgen]{.title-ref} repo on GitHub.
+1.  Fork the [specitron]{.title-ref} repo on GitHub.
 
 2.  Clone your fork locally:
 
     ``` shell
-    $ git clone git@github.com:your_name_here/openapi_specgen.git
+    $ git clone git@github.com:your_name_here/specitron.git
     ```
 
 3.  Install your local copy into a virtualenv. Assuming you have
@@ -68,8 +68,8 @@ for local development.
     local development:
 
     ``` shell
-    $ mkvirtualenv openapi_specgen
-    $ cd openapi_specgen/
+    $ mkvirtualenv specitron
+    $ cd specitron/
     $ python setup.py develop
     ```
 
@@ -86,7 +86,7 @@ for local development.
     tox:
 
     ``` shell
-    $ flake8 openapi_specgen tests
+    $ flake8 specitron tests
     $ python setup.py test or pytest
     $ tox
     ```
@@ -113,7 +113,7 @@ Before you submit a pull request, check that it meets these guidelines:
     the feature to the list in README.rst.
 3.  The pull request should work for Python 3.5, 3.6, 3.7 and 3.8, and
     for PyPy. Check
-    <https://travis-ci.com/yusufadell/openapi_specgen/pull_requests> and
+    <https://travis-ci.com/imperiumx/specitron/pull_requests> and
     make sure that the tests pass for all supported Python versions.
 
 # Tips
@@ -121,7 +121,7 @@ Before you submit a pull request, check that it meets these guidelines:
 To run a subset of tests:
 
 ``` shell
-$ pytest tests.test_openapi_specgen
+$ pytest tests.test_specitron
 ```
 
 # Deploying

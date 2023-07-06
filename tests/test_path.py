@@ -1,4 +1,4 @@
-from openapi_specgen import OpenApiParam, OpenApiPath, OpenApiResponse
+from specitron import OpenApiParam, OpenApiPath, OpenApiResponse
 
 
 def test_path_with_params():

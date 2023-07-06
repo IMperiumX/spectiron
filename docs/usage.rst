@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use openapi-specgen in a project::
+To use specitron in a project::
 
-    import openapi_specgen
+    import specitron

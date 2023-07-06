@@ -10,7 +10,7 @@ from .constants import (
 
 # import marshmallow
 
-# from openapi_specgen.marshmallow_schema import get_openapi_schema_from_mashmallow_schema
+# from specitron.marshmallow_schema import get_openapi_schema_from_mashmallow_schema
 
 
 get_schema = lambda data_type: {

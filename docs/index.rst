@@ -1,4 +1,4 @@
-Welcome to openapi-specgen's documentation!
+Welcome to specitron's documentation!
 ======================================
 
 .. toctree::

@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=openapi_specgen
+set SPHINXPROJ=specitron
 
 if "%1" == "" goto help
 

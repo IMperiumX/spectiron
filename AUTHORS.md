@@ -4,7 +4,7 @@ title: Credits
 
 # Development Lead
 
--   Yusuf Adel \<<yusufadell.dev@gmail.com>\>
+-   Yusuf Adel \<<imperiumx.dev@gmail.com>\>
 
 # Contributors
 
