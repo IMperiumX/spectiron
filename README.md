@@ -57,7 +57,6 @@
 - [:notebook\_with\_decorative\_cover: Table of Contents](#notebook_with_decorative_cover-table-of-contents)
   - [:star2: About specitron](#star2-about-specitron)
     - [:camera: Screenshots](#camera-screenshots)
-    - [:space\_invader: Tech Stack](#space_invader-tech-stack)
   - [:toolbox: Getting Started](#toolbox-getting-started)
     - [:bangbang: Prerequisites](#bangbang-prerequisites)
     - [:gear: Installation](#gear-installation)
@@ -96,49 +95,7 @@ Note: This project is still in development and is not ready for production use.
 
 <!-- TechStack -->
 
-### :space_invader: Tech Stack
-
-<details closes>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
-    <li><a href="https://nextjs.org/">Next.js</a></li>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-    <li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
-  </ul>
-</details>
-
-<details closes>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://www.djangoproject.com/">Django</a></li>
-    <li><a href="https://www.django-rest-framework.org/">Django REST Framework</a></li>
-    <li><a href="https://channels.readthedocs.io/en/stable/">Django Channels</a></li>
-    <li><a href="https://www.graphene-python.org/">Graphene</a></li>
-  </ul>
-</details>
-
-<details closes>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.mysql.com/">MySQL</a></li>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-    <li><a href="https://redis.io/">Redis</a></li>
-    <li><a href="https://neo4j.com/">Neo4j</a></li>
-    <li><a href="https://www.mongodb.com/">MongoDB</a></li>
-  </ul>
-</details>
-
-<details closes>
-<summary>DevOps</summary>
-  <ul>
-    <li><a href="https://www.docker.com/">Docker</a></li>
-    <li><a href="https://www.jenkins.io/">Jenkins</a></li>
-    <li><a href="https://circleci.com/">CircleCLI</a></li>
-  </ul>
-</details>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+TODO
 
 <!-- Getting Started -->
 
@@ -216,11 +173,10 @@ Install dependencies
   pip install -r requirements/local.txt
 ```
 
-Start the server
+TODO - Add an entry point for the CLI tool
 
 ```bash
-  python mananage.py migrate\
-  python manage.py runserver
+  python specitron/cli.py
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -259,38 +215,38 @@ print(specification)
 
 - ### Phase 1: Basic Functionality
 
-  - [x] Parsing Source Code: Implement the ability to parse the source code of API projects written in one or more programming languages.
-  - [x] Endpoint Extraction: Extract API endpoints, HTTP methods, URL paths, query parameters, and request/response headers from the parsed source code.
-  - [x] Data Model Extraction: Identify data structures, request/response bodies, data types, required fields, and basic validation rules from the source code.
-  - [x] Documentation Generation: Generate an initial OpenAPI specification document based on the extracted information and provide options for customization.
+  - [ ] Parsing Source Code: Implement the ability to parse the source code of API projects written in one or more programming languages.
+  - [ ] Endpoint Extraction: Extract API endpoints, HTTP methods, URL paths, query parameters, and request/response headers from the parsed source code.
+  - [ ] Data Model Extraction: Identify data structures, request/response bodies, data types, required fields, and basic validation rules from the source code.
+  - [ ] Documentation Generation: Generate an initial OpenAPI specification document based on the extracted information and provide options for customization.
 
 - ### Phase 2: Enhanced Extraction and Documentation
-  
-  - [x] Advanced Endpoint Analysis: Improve endpoint extraction by handling more complex scenarios like route parameters, nested routes, and route patterns.
-  - [x] Request/Response Body Analysis: Enhance data model extraction to support nested objects, arrays, and more advanced validation rules.
+
+  - [ ] Advanced Endpoint Analysis: Improve endpoint extraction by handling more complex scenarios like route parameters, nested routes, and route patterns.
+  - [ ] Request/Response Body Analysis: Enhance data model extraction to support nested objects, arrays, and more advanced validation rules.
   - [ ] Code Annotation Support: Introduce support for code annotations or comments that allow developers to provide additional information for the generator to use in the documentation.
   - [ ] Customization Options: Expand customization options to allow developers to specify details like response examples, API descriptions, and error handling.
 
 - ### Phase 3: Language and Framework Support
-  
-  - [x] Support for Multiple Programming Languages: Add support for additional programming languages commonly used for API development(Python for now).
-  - [x] Framework Integration: Integrate with popular web frameworks (e.g., Express.js, Django, Ruby on Rails) to enhance extraction capabilities specific to those frameworks(DRF for now).
+
+  - [ ] Support for Multiple Programming Languages: Add support for additional programming languages commonly used for API development(Python for now).
+  - [ ] Framework Integration: Integrate with popular web frameworks (e.g., Express.js, Django, Ruby on Rails) to enhance extraction capabilities specific to those frameworks(DRF for now).
 
 - ### Phase 4: Developer Experience and Tooling
-  
+
   - [ ] Command-Line Interface (CLI): Develop a CLI tool for easy configuration and execution of the OpenAPI generator.
   - [ ] Graphical User Interface (GUI): Create a user-friendly GUI for configuring and running the generator.
   - [ ] Build Process Integration: Provide seamless integration with common build tools and CI/CD pipelines for automatic generation of documentation during the development lifecycle.
 
 - ### Phase 5: Advanced Features
-  
+
   - [ ] Authentication and Authorization Support: Extend the generator to extract and document authentication mechanisms (e.g., OAuth, JWT) and authorization requirements.
   - [ ] Error Handling Documentation: Automatically extract error handling logic from the source code and include it in the generated documentation.
   - [ ] Versioning Support: Add support for documenting multiple versions of an API and handling version-specific endpoints and data models.
   - [ ] API Testing Integration: Integrate with API testing frameworks or tools to automatically generate test cases based on the OpenAPI specification.
 
 - ### Phase 6: Updates and Maintenance
-  
+
   - [ ] Stay Up-to-Date with OpenAPI Specification: Regularly update the generator to support the latest version of the OpenAPI specification.
   - [ ] Monitor Language and Framework Updates: Keep track of updates in programming languages and frameworks to ensure compatibility and make necessary adjustments.
 
